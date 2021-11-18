@@ -8,16 +8,16 @@
 <body>
   <header id="main-header">
       <nav>
+	<a href="/user/{{id}}">Perfil</a>
 	<a href="/user/seguidores/{{id}}">Seguidores</a>
-	<a href="/user/seguidos/{{id}}">Seguidos</a>
       </nav>
   </header>
-  <h1>Perfil</h1>
+  <h1>Seguidos</h1>
   <ul>
-  {% for post in posts %}
+  {% for seguido in seguidos %}
   <il>
   <h3>{{post.body}}</h3>
-	<h4>Fecha:{{post.created_at}} Likes:{{post.likes}}</h4>
+  <h4>{{ seguidos.user.Nombre }} {{ seguidos.user.apellido }}</h4>
   </il>
   {% endfor %}
   </ul>
