@@ -7,7 +7,7 @@ urlpatterns = [
 #primer valor es la ruta /
 # segundo parámetro es la función dentro de view.py que tiene que ser llamanda en esa ruta
 
-    path('user/<id>',views.profile),
-    path('user/seguidos/<id>',views.seguidos),
-    path('user/seguidores/<id>',views.seguidores)
+    path('user/<int:id>',views.profile),
+    path('user/seguidos/<int:id>',views.seguidos),
+    path('user/seguidores/<int:id>',views.seguidores)
 ]

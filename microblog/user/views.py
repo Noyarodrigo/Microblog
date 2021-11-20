@@ -1,6 +1,6 @@
 from django.shortcuts import render,HttpResponse
 from post.models import Post 
-from .models import User
+from .models import User, Seguidores
 # Create your views here.
 
 def profile(request,id):
@@ -11,14 +11,13 @@ def profile(request,id):
     posts = Post.objects.all()
     return render(request,'user/index.html', {'posts':posts, 'id':id})
 
-def seguidos(request,id):
-    #seguidos = User.Seguidores.objects.filter(user_id = id)
-    seguidos = User.objects.select_related('user_id')
-
+def seguidos(request, id):
+    seguidos = Seguidores.objects.filter(followerid=id).select_related('followerid').get().order_by('createdat')
+    print(seguidostmp)
+    for seguido in seguidos:
+        print(seguido.followerid.nombre)
     return render(request,'user/seguidos.html', {'seguidos':seguidos, 'id':id})
 
 def seguidores(request,id):
-    #seguidos = User.Seguidores.objects.filter(user_id = id)
-    seguidos = User.objects.select_related('id', 'user_id')
-
-    return render(request,'user/seguidos.html', {'seguidos':seguidos},id)
+    seguidores = Seguidores.objects.filter(user=id).select_related('followerid').all().order_by('createdat')
+    return render(request,'user/seguidos.html', {'seguidos':seguidores, 'id':id})

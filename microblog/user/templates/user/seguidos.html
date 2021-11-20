@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mi Perfil</title>
+  <title>Seguidos</title>
   <link href="style.css" rel="stylesheet" />
 </head>
 <body>
@@ -16,8 +16,7 @@
   <ul>
   {% for seguido in seguidos %}
   <il>
-  <h3>{{post.body}}</h3>
-  <h4>{{ seguidos.user.Nombre }} {{ seguidos.user.apellido }}</h4>
+  <h4>{{ seguido.followerid.nombre }} {{ seguido.followerid.apellido }}</h4>
   </il>
   {% endfor %}
   </ul>
