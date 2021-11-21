@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Publicar</title>
+  <link href="/static/user/style.css" rel="stylesheet" />
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/user/publicar/{{id}}">Publicar</a>
+  <div class="topnav-right">
+	<a href="/user/seguidores/{{id}}">Seguidores</a>
+	<a href="/user/{{id}}">Perfil</a>
+  </div>
+</div>
+  <form action ="/user/publicar/{{id}}" method = POST>
+    {% csrf_token %}
+    <ul>
+	{{ form.as_ul}}
+	<input type="hidden" name="user_id" value="{{id}}">
+    </ul>
+  <div id="publicar-actions">
+	<button class= 'submit'>Enviar</button>
+  </div>  
+  </form>
+</body>
+</html>

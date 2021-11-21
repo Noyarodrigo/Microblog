@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <title>Mi Perfil</title>
-  <link href="style.css" rel="stylesheet" />
+  <link href="/static/user/style.css" rel="stylesheet" />
 </head>
 <body>
-  <header id="main-header">
-      <nav>
+<div class="topnav">
+  <a class="active" href="/user/{{id}}">Perfil</a>
+  <div class="topnav-right">
 	<a href="/user/seguidores/{{id}}">Seguidores</a>
-	<a href="/user/seguidos/{{id}}">Seguidos</a>
-      </nav>
-  </header>
-  <h1>Perfil</h1>
+	<a href="/user/publicar/{{id}}">Publicar</a>
+  </div>
+</div>
   <ul>
   {% for post in posts %}
-  <il>
+  <li>
   <h3>{{post.body}}</h3>
 	<h4>Fecha:{{post.created_at}} Likes:{{post.likes}}</h4>
-  </il>
+  </li>
   {% endfor %}
   </ul>
 </body>

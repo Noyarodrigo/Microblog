@@ -14,4 +14,3 @@ class Seguidores(models.Model):
     followerid = models.ForeignKey(User,on_delete=models.CASCADE)
     user = models.IntegerField()
     createdat = models.DateTimeField(auto_now_add=True)
-

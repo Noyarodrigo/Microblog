@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Publicar</title>
+  <link href="/static/user/style.css" rel="stylesheet" />
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/user/publicar/{{id}}">Publicar</a>
+  <div class="topnav-right">
+	<a href="/user/seguidores/{{id}}">Seguidores</a>
+	<a href="/user/{{id}}">Perfil</a>
+  </div>
+</div>
+  <div>
+      {% if status == 'True' %}
+      <h3>Publicado correctamente</h3>
+	<a href="/user/{{id}}">Volver</a>
+	{% else %}
+      <h3>Ha superado el límite de caracteres</h3>
+	<a href="/user/{{id}}">Cancelar</a>
+	<a href="/user/publicar/{{id}}">Reintentar</a>
+	{% endif %}
+    </h3>
+  </div>
+</body>
+</html>

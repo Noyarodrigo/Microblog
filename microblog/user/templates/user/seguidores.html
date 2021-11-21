@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <title>Seguidores</title>
-  <link href="style.css" rel="stylesheet" />
+  <link href="/static/user/style.css" rel="stylesheet" />
 </head>
 <body>
-  <header id="main-header">
-      <nav>
+<div class="topnav">
+  <a class="active" href="/user/seguidores/{{id}}">Seguidores</a>
+  <div class="topnav-right">
 	<a href="/user/{{id}}">Perfil</a>
-	<a href="/user/seguidos/{{id}}">Seguidos</a>
-      </nav>
-  </header>
-  <h1>Seguidores</h1>
+	<a href="/user/publicar/{{id}}">Publicar</a>
+  </div>
+</div>
   <ul>
   {% for seguidor in seguidores %}
-  <il>
+  <li>
   <h4>{{ seguidor.followerid.nombre }} {{ seguidor.followerid.apellido }}</h4>
-  </il>
+  </li>
   {% endfor %}
   </ul>
 </body>
