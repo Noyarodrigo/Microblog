@@ -9,5 +9,8 @@ urlpatterns = [
 
     path('user/<int:id>',views.profile),
     path('user/seguidores/<int:id>',views.seguidores),
-    path('user/publicar/<int:id>',views.publicar)
+    path('user/publicar/<int:id>',views.publicar),
+    path('user/login', views.loginPage),
+    path('user/feed', views.feed),
+    path('user/registro', views.regitroPage),
 ]
