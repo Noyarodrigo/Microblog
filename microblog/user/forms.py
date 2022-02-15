@@ -5,7 +5,7 @@ from post import models
 from post.models import Post
 from user.models import User
 
-class PublicarBlog(forms.ModelForm):
+class FormBlog(forms.ModelForm):
     class Meta:
         #con esta clase django infiere un formulario que satisfaga a lo que encuentre en publicar model
         model = Post

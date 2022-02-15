@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render,HttpResponse
 from post.models import Post 
 from .models import User, Seguidores
-from .forms import PublicarBlog, RegistroForm
+from .forms import FormBlog, RegistroForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout 
 from django.core.mail import send_mail
@@ -25,10 +25,10 @@ def seguidores(request,id):
 
 def publicar(request,id):
     if request.method == 'GET':
-        publicar_form = PublicarBlog()
+        publicar_form = FormBlog()
         return render(request, 'user/publicar.html', {'form':publicar_form, 'id':id})
     else:
-        publicar_form = PublicarBlog(data = request.POST)
+        publicar_form = FormBlog(data = request.POST)
         if publicar_form.is_valid:
             if len(request.POST.get('body')) < 144 and len(request.POST.get('body')) > 0:
                 publicar_form.save()
